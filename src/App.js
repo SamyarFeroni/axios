@@ -1,6 +1,6 @@
-// src/App.js
+
 import React from 'react';
-import FirstRequest from './components/getData'; // وارد کردن کامپوننت FirstRequest
+import FirstRequest from './components/getData';
 
 function App() {
   return (

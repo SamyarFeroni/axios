@@ -42,11 +42,11 @@ const FirstRequest = () => {
     try {
       const response = await axios.put(`${apiUrl}/${id}`, {
         ...editTodo,
-        todo: editText, // به‌روزرسانی متن تسک
+        todo: editText, 
       });
       setTodos(todos.map((todo) => (todo.id === id ? response.data : todo)));
       setEditTodo(null);
-      setEditText(""); // پاک کردن فیلد ویرایش
+      setEditText(""); 
     } catch (error) {
       console.log(error);
     }
