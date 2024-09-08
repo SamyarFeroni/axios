@@ -1,4 +1,3 @@
-// src/FirstRequest.js
 import { useEffect, useState } from "react";
 import axios from "axios";
 import View from "./view"; 
