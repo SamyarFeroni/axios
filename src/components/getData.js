@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import View from "./view"; 
-const apiUrl = "http://localhost:3000/todos"; //localhost api 
+import View from "./view";
+const apiUrl = "http://localhost:3000/todos"; //localhost api
+// const api = 'https://dummyjson.com/todos'
 
 const FirstRequest = () => {
   const [todos, setTodos] = useState([]);
@@ -14,7 +15,11 @@ const FirstRequest = () => {
     try {
       const response = await axios.get(apiUrl);
       setTodos(response.data);
-      console.log(response.data);
+
+      // console.log(response.data);
+      // const respons = await axios.get(api)
+      //setTodos(response.data)
+      // console.log(response.data);
     } catch (error) {
       console.log(error);
     }
@@ -28,7 +33,7 @@ const FirstRequest = () => {
         completed: false,
       });
       setTodos([...todos, response.data]);
-      setNewTodo(""); 
+      setNewTodo("");
       console.log(response.data);
       console.log(todos);
     } catch (error) {
@@ -41,11 +46,11 @@ const FirstRequest = () => {
     try {
       const response = await axios.put(`${apiUrl}/${id}`, {
         ...editTodo,
-        todo: editText, 
+        todo: editText,
       });
       setTodos(todos.map((todo) => (todo.id === id ? response.data : todo)));
       setEditTodo(null);
-      setEditText(""); 
+      setEditText("");
     } catch (error) {
       console.log(error);
     }
